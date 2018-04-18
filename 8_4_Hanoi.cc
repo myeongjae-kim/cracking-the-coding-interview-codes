@@ -1,3 +1,8 @@
+// Input: The # of disks
+
+// $ ./a.out
+// $ 10
+
 #include <iostream>
 #include <vector>
 #include <unistd.h>

@@ -1,3 +1,5 @@
+// Input: A one string.
+
 #include <iostream>
 #include <set>
 
