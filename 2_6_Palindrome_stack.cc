@@ -48,6 +48,9 @@ void print_list(node_t *head) {
 
 // Answer of book
 // Fast runner : 1st, 3rd, 5th ...nodes
+// 
+// Slow and fast runner both start of 1st node.
+// It's better than my solution when the problem is 2_8_loop_detection
 bool is_palindrome_book(node_t *head) {
   node_t *slow_iter = head->next;
   node_t *fast_iter = head->next;
