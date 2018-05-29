@@ -1,29 +1,31 @@
+// http://www.nayuki.io/page/next-lexicographical-permutation-algorithm
 #include <bits/stdc++.h>
 
 using namespace std;
 
 // Complete the biggerIsGreater function below.
-// hefg -> hegf
 string biggerIsGreater(string w) {
   bool is_found = false;
   int sort_starting_idx;
   
-  for(int i = w.length() - 2; i >= 0; i--) {
-    for(int k = w.length() - 1; k > i; k--) {
-      if(w[i] < w[k]) {
-        is_found = true;
-        swap(w[i], w[k]);
-        sort_starting_idx = i + 1;
-        break;
-      }
-    }
-    if(is_found) {
+  int i;
+  for(i = w.length() - 2; i >= 0; i--) {
+    if(w[i] < w[i+1]) {
+      is_found = true;
       break;
     }
   }
   
   if(is_found == false) {
     return "no answer";
+  }
+  
+  for(int k = w.length() - 1; k > i; k--) {
+    if(w[i] < w[k]) {
+      swap(w[i], w[k]);
+      sort_starting_idx = i + 1;
+      break;
+    }
   }
   
   reverse(w.begin() + sort_starting_idx, w.end());
